@@ -1,11 +1,18 @@
 # Irish Constituencies Neo4j Database
-###### Student name, G00123456
+###### **Patrick Griffin**, **G00314635**
 
 ## Introduction
-Give a summary here of what your project is about.
+This project is a database(Neo4j) collected of *candidates*,*constituencys*,*parties* and their *relationships* in the 2016 election of Ireland. 
 
 ## Database
-Explain how you created your database, and how information is represented in it.
+Firstly, I created the 40 constituencies with a brief description of each constituency. Here is an example of how to create one:
+'''create (`nCork South-West`:Constituency {name:"Cork South-West", population:82952, seats:3, description:"The county of Cork, except the parts thereof which are comprised in the constituencies of Cork East, Cork North-Central, Cork North-West, and Cork South Central."})'''
+
+**Properties include**
+*name
+*population
+*seats
+*description
 
 ## Queries
 Summarise your three queries here.
