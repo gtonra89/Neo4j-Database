@@ -5,7 +5,8 @@
 This project is a database(Neo4j) collected of *candidates*,*constituencys*,*parties* and their *relationships* in the 2016 election of Ireland. 
 
 ## Database
-Firstly, I created the 40 constituencies with a brief description of each constituency. Here is an example of how to create one:
+####Constituencies
+Firstly, I created the 40 constituencies(as a Node) with a brief description of each constituency. Here is an example of how to create one:
 ```
 create (`nCork South-West`:Constituency {name:"Cork South-West", population:82952, seats:3, description:"The county of Cork, except the parts thereof which are comprised in the constituencies of Cork East, Cork North-Central, Cork North-West, and Cork South Central."})
 ```
@@ -16,7 +17,8 @@ create (`nCork South-West`:Constituency {name:"Cork South-West", population:8295
 * seats
 * description
 
-Next, I created the candidates based on their constituency and entered each of their properties. Here is an example:
+####Candidates
+Next, I created the candidates(as a node) based on their constituency and entered each of their properties. Here is an example:
 ```
 Create (`nDarragh O'Brien`:Candidates {name:"Darragh O'Brien", party:"Fianna Fail", gender:"Male", constituency:"Dublin Fingal", age:41, elected:"yes"}),
 (`nClare Daly`:Candidates {name:"Clare Daly", party:"Independents 4 Change", gender:"Female", constituency:"Dublin Fingal", age:47, elected:"yes"})
@@ -29,6 +31,18 @@ Here are the candidates properties:
 * gender
 * constituency
 * age
+* elected
+
+####Parties
+After that I created the Parties of Ireland(as a node), here is how i created a single pary:
+```
+CREATE (`nLabour Party`: Party{name:"Labour Party", leader:"Joan Burton", colours:"Red", candidates: 37, elected: 7})
+```
+**Property Keys**
+* name
+* leader
+* colours
+* candidates
 * elected
 
 ## Queries
