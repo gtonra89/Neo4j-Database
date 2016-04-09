@@ -20,9 +20,7 @@ create (`nCork South-West`:Constituency {name:"Cork South-West", population:8295
 ####Candidates
 Next, I created the candidates(as a node) based on their constituency and entered each of their properties. Here is an example:
 ```
-Create (`nDarragh O'Brien`:Candidates {name:"Darragh O'Brien", party:"Fianna Fail", gender:"Male", constituency:"Dublin Fingal", age:41, elected:"yes"}),
-(`nClare Daly`:Candidates {name:"Clare Daly", party:"Independents 4 Change", gender:"Female", constituency:"Dublin Fingal", age:47, elected:"yes"})
-
+Create (`nMargaret Murphy-O'Mahony`:Candidates {name:"Margaret Murphy-O'Mahony", party:"Fianna Fail", gender:"Female", constituency:"Cork South-West", age:48, elected:"yes"})
 ```
 If a candidate has no information for age as an example I entered **null** as its value. I also show if the candidate was elected or not.
 Here are the candidates properties:
@@ -44,6 +42,20 @@ CREATE (`nLabour Party`: Party{name:"Labour Party", leader:"Joan Burton", colour
 * colours
 * candidates
 * elected
+
+####Relationships
+**Relationship between constituency and candidate**
+After I created the constituencies and candidates I then created a relationship between them by taking the name of the constituency from where I created the candidates and where I created the constituencies.
+```
+match (n{constituency:"Cork South-West"}), (a{name:"Cork South-West"}) create (n)-[r:FROM]->(a) return n,a
+```
+
+**Relationship between Party and candidate**
+After creating the parties I created the relationship between them. I did this by taking the name of the pary from where I created the actual parties and from where I created the candidates. Thus linking them together.
+```
+match (n{party:"Fianna Fail"}), (a{name:"Fianna Fail"}) create (n)-[r:MEMBER_OF]->(a) return n,a
+```
+
 
 ## Queries
 Summarise your three queries here.
