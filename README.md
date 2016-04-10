@@ -58,16 +58,16 @@ match (n{party:"Fianna Fail"}), (a{name:"Fianna Fail"}) create (n)-[r:MEMBER_OF]
 
 
 ## Queries
-Summarise your three queries here.
-Then explain them one by one in the following sections.
+In summary my three queries are related in the fact that they search for specific details. I believe that these queries are valuable in the sense that important information and be pulled and used. The information can also be substituted easily to find different information.
 
-#### Query one title
-This query retreives the Bacon number of an actor...
-```cypher
-MATCH
-	(Bacon)
-RETURN
-	Bacon;
+#### Locate specific party,gender and constituency
+
+show males in a specific party and constituency I used this query as it can be use widespread to find and locate certain amount of people. In this case there are 6 male members of the independant party of donegal
+
+```
+MATCH (n:Candidates)
+where n.party="Independent" and n.gender="Male" and n.constituency="Donegal" 
+RETURN n
 ```
 
 #### Query two title
