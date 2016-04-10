@@ -32,7 +32,7 @@ Here are the candidates properties:
 * elected
 
 ####Parties
-After that I created the Parties of Ireland(as a node), here is how i created a single pary:
+After that I created the Parties of Ireland(as a node), here is how i created a single party:
 ```
 CREATE (`nLabour Party`: Party{name:"Labour Party", leader:"Joan Burton", colours:"Red", candidates: 37, elected: 7})
 ```
@@ -84,7 +84,7 @@ RETURN
 n, m, o;
 ```
 
-#### Using relationship 
+#### Using relationship in a query
 My final query is to show the elected candidates and their parties which can be valuable for finding the people who have been elected. This query can also be manipulated into finding people who were not elected.
 ```
 MATCH (n:Candidates {elected:'yes'})-[:MEMBER_OF]->(p:Party) RETURN n,p
@@ -95,4 +95,5 @@ MATCH (n:Candidates {elected:'yes'})-[:MEMBER_OF]->(p:Party) RETURN n,p
 2. https://en.wikipedia.org/wiki/Parliamentary_constituencies_in_the_Republic_of_Ireland
 3. http://www.thejournal.ie/election-2016/constituency/26/
 4. I was discussing ideas on queries with the following students: Gareth Lynsky, Christopher Weir and Keith Langan
-4. My lecturer Ian McLoughlin's problem sheets 
+5. http://neo4j.com/docs/stable/cypher-query-lang.html assisted creating the database
+6. My lecturer Ian McLoughlin's problem sheets 
