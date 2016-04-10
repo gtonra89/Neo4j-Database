@@ -70,13 +70,18 @@ where n.party="Independent" and n.gender="Male" and n.constituency="Donegal"
 RETURN n
 ```
 
-#### Query two title
-This query retreives the Bacon number of an actor...
-```cypher
+#### Find Specific people
+Finds people ,can match on regular expressions and also case insensitive  =~
+This query I believe to be valuable as searching for specific people and it returns all their information.In this case the people returned are: Martin Ferris, Brendan Griffin, Mark Keogh
+```
 MATCH
-	(Bacon)
+(n:Candidates), (m:Candidates), (o:Candidates)
+WHERE
+n.name =~ ".*artin.*erris.*" AND
+m.name =~ ".*endan.*ffin.*" AND
+o.name =~ ".*ark.*eogh.*"
 RETURN
-	Bacon;
+n, m, o;
 ```
 
 #### Query three title
@@ -92,3 +97,4 @@ RETURN
 1. [Neo4J website](http://neo4j.com/), the website of the Neo4j database.
 2. https://en.wikipedia.org/wiki/Parliamentary_constituencies_in_the_Republic_of_Ireland
 3. http://www.thejournal.ie/election-2016/constituency/26/
+4. My lecturer Ian McLoughlin's problem sheets 
